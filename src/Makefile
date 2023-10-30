@@ -88,7 +88,7 @@ endif
 
 gcov_report: tests
 	lcov -t "test"  -o s21_test.info -c -d ./ --no-external --exclude '$(CURRENT_DIR)/resources/*' --ignore-errors mismatch --ignore-errors unused
-	genhtml ./s21_test.info --output-directory ./report/
+	genhtml ./s21_test.info --output-directory ./report/ --ignore-errors empty
 ifeq ($(OS),Darwin)
 	open ./report/index.html
 else
